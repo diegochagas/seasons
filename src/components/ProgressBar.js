@@ -11,3 +11,7 @@ export default class ProgressBar extends React.Component {
     );
   }
 }
+
+ProgressBar.defaultProps = {
+  message: 'Loading...'
+}
