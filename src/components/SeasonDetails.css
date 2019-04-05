@@ -12,3 +12,26 @@
 .summer{
   background-color: orange;
 }
+
+.fas{
+  font-size: 100px;
+  position: absolute;
+}
+
+.fa-sun{
+  color: red;
+}
+
+.fa-snowflake{
+  color: #6161e5;
+}
+
+.icon-left {
+  top: 10px;
+  left: 10px;
+}
+
+.icon-right {
+  bottom: 10px;
+  right: 10px;
+}

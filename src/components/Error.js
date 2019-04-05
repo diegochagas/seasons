@@ -1,15 +1,14 @@
 import React from 'react';
+import './Error.css';
 
 export default class Error extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
   render(){
     return(
-      <div class="error">
-        <span>Error: </span>
-        <span>{this.state.errorMessage}</span>
+      <div className="error">
+        <h1>
+          <span>Error: </span>
+          <span>{this.props.message}</span>
+        </h1>
       </div>
     );
   }

@@ -2,18 +2,13 @@ import React from 'react';
 import './SeasonDetails.css';
 
 export default class SeasonsDetail extends React.Component {
-	constructor(props){
-		super(props);
-	}
-
 	render(){
     const season = this.getSeason(this.props.latitude, new Date().getMonth());
-
 		return(
 			<div className={`season-details ${season}`}>
-        <span className={`icon ${configSeason[season].iconName}`}></span>
-				<span>{configSeason[season].text}</span>
-        <span className={`icon ${configSeason[season].iconName}`}></span>
+        <i className={`fas fa-${configSeason[season].iconName} icon-left`}></i>
+				<h1>{configSeason[season].text}</h1>
+        <i className={`fas fa-${configSeason[season].iconName} icon-right`}></i>
 			</div>
 		);
   }
@@ -25,7 +20,6 @@ export default class SeasonsDetail extends React.Component {
       return latitude > 0 ? 'winter' : 'summer';
     }
   }
-
 }
 
 const configSeason = {
