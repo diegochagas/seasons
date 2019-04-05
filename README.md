@@ -6,6 +6,7 @@ Web app that shows a message depending on the season, based on the course [Moder
 
 - React
 - Geolocation API
+- Font Awesome
 - HTML
 - CSS
 - JavaScript
