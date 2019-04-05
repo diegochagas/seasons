@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import SeasonsDetail from './SeasonsDetail';
-import Progress from './Progress';
+import SeasonsDetail from './components/SeasonDetails';
+import Progress from './components/ProgressBar';
+import Error from './components/Error';
 
 class App extends Component {
   constructor(props){
@@ -15,7 +16,7 @@ class App extends Component {
   
   componentDidMount(){
     window.navigator.geolocation.getCurrentPosition(
-      position => this.setState({latitude: position.latitude}),
+      position => this.setState({latitude: position.coords.latitude}),
       error => this.setState({errorMessage: error.message})
     );
   }
@@ -33,11 +34,10 @@ class App extends Component {
       return <SeasonsDetail latitude={this.state.latitude}/>;
     }
     if (!this.state.latitude && this.state.errorMessage) {
-      return <div>Error: {this.state.errorMessage}</div>;
+      return <Error message={this.state.errorMessage}/>;
     }
     return <Progress message={`Please, accept allow location`}/>;
   }
 }
-
 
 export default App;
